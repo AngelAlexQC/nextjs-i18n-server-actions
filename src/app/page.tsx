@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { changeLocale } from "./actions";
@@ -61,11 +61,19 @@ export default function Home() {
               </p>
               <form action={changeLocale} method="post">
                 <input type="hidden" name="locale" value="en" />
-                <button type="submit">{translations[locale].buttons.en}</button>
+                <Button
+                  variant={locale === "en" ? "default" : "outline"}
+                  type="submit">
+                  {translations[locale].buttons.en}
+                </Button>
               </form>
               <form action={changeLocale} method="post">
                 <input type="hidden" name="locale" value="es" />
-                <button type="submit">{translations[locale].buttons.es}</button>
+                <Button
+                  variant={locale === "es" ? "default" : "outline"}
+                  type="submit">
+                  {translations[locale].buttons.es}
+                </Button>
               </form>
             </div>
           </div>
