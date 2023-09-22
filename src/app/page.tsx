@@ -41,7 +41,7 @@ export default function Home() {
               </p>
             </div>
             <div className="w-full max-w-sm space-y-2 mx-auto">
-              <form className="flex flex-col sm:flex-row items-center gap-2">
+              <form className="flex flex-col sm:flex-row items-center gap-4">
                 <Input
                   className="max-w-lg flex-1 bg-gray-800 text-white border-gray-900"
                   placeholder={translations[locale].home.placeholder}
@@ -59,22 +59,24 @@ export default function Home() {
                   {translations[locale].home.terms}
                 </Link>
               </p>
-              <form action={changeLocale} method="post">
-                <input type="hidden" name="locale" value="en" />
-                <Button
-                  variant={locale === "en" ? "default" : "outline"}
-                  type="submit">
-                  {translations[locale].buttons.en}
-                </Button>
-              </form>
-              <form action={changeLocale} method="post">
-                <input type="hidden" name="locale" value="es" />
-                <Button
-                  variant={locale === "es" ? "default" : "outline"}
-                  type="submit">
-                  {translations[locale].buttons.es}
-                </Button>
-              </form>
+              <div className="flex flex-row justify-center items-center gap-4">
+                <form action={changeLocale} method="post">
+                  <input type="hidden" name="locale" value="en" />
+                  <Button
+                    variant={locale === "en" ? "default" : "outline"}
+                    type="submit">
+                    {translations[locale].buttons.en}
+                  </Button>
+                </form>
+                <form action={changeLocale} method="post">
+                  <input type="hidden" name="locale" value="es" />
+                  <Button
+                    variant={locale === "es" ? "default" : "outline"}
+                    type="submit">
+                    {translations[locale].buttons.es}
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
